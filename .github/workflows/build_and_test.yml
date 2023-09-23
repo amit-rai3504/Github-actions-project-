@@ -12,12 +12,8 @@ jobs:
               node-version: 18
           - name: install dependencies
             run: npm ci
-          - name: install eslint
-            run: |
-              npm -g i eslint-cli
-              npm i eslint-plugin-promise@latest --save-dev
           - name: lint code
-            run: eslint --ext .jsx --fix src
+            run: npn run lint
     test:
         runs-on: ubuntu-latest
         needs: lint
